@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>名前入力</title>
+</head>
+<body>
+    <h1>名前を入力してください</h1>
+    <input type="text" id="nameList" placeholder="名前を入力">
+    <button onclick="handleClick()">送信</button>
+
+    <script>
+        function handleClick() {
+            const nameInput = document.getElementById("nameList");
+            alert("入力された名前: " + nameInput.value);
+        }
+    </script>
+</body>
+</html>
