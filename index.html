@@ -2,28 +2,26 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>チーム分け</title>
+    <title>チーム分けアプリ</title>
     <style>
         .container {
             display: flex;
             gap: 20px;
         }
         textarea {
-            width: 300px;
+            width: 200px;
         }
     </style>
 </head>
 <body>
-    <h1>名前を入力し、チーム分け結果を表示します</h1>
+    <h1>チーム分けツール</h1>
 
-    <div>
-        <label for="nameList">名前リスト（1行に1人）</label><br>
-        <textarea id="nameList" rows="30" placeholder="ここに名前を改行で入力してください"></textarea>
-    </div>
+    <label for="nameList">名前一覧（改行で区切って入力）</label><br>
+    <textarea id="nameList" rows="30"></textarea><br><br>
 
-    <br>
     <button onclick="handleClick()">チーム分け実行</button>
 
+    <h2>結果</h2>
     <div class="container">
         <div>
             <label for="team1">Team 1</label><br>
@@ -32,6 +30,10 @@
         <div>
             <label for="team2">Team 2</label><br>
             <textarea id="team2" rows="30" readonly></textarea>
+        </div>
+        <div>
+            <label for="extra">余り</label><br>
+            <textarea id="extra" rows="30" readonly></textarea>
         </div>
     </div>
 
