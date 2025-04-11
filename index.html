@@ -7,11 +7,26 @@
         .container {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
+    
         textarea {
-            width: 200px;
+            width: 400px; /* 200px × 2.0 */
+            font-size: 2.0em;
+        }
+    
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+    
+            textarea {
+                width: 100%;
+            }
         }
     </style>
+    
 </head>
 <body>
     <h1>チーム分けツール</h1>
