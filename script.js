@@ -25,7 +25,27 @@ function handleClick() {
     document.getElementById("team2").value = team2.join("\n");
     document.getElementById("extra").value = extra.join("\n");
 
-    console.log("Team 1:", team1);
-    console.log("Team 2:", team2);
-    console.log("余り:", extra);
+    console.log("西:", team1);
+    console.log("東:", team2);
+    console.log("観戦:", extra);
+    // チーム分け後、以下を末尾に追加するなど
+    const resultStr =
+    `西：${team1.join("、")}\n` +
+    `東：${team2.join("、")}\n` +
+    (extra.length > 0 ? `観戦：${extra.join("、")}` : "");
+
+    document.getElementById("resultText").value = resultStr;
+}
+
+function copyResult() {
+    const resultText = document.getElementById("resultText").value;
+
+    navigator.clipboard.writeText(resultText)
+        .then(() => {
+            alert("結果をコピーしました！");
+        })
+        .catch(err => {
+            console.error("コピーに失敗しました:", err);
+            alert("コピーに失敗しました。ブラウザの設定をご確認ください。");
+        });
 }
