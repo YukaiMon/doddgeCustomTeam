@@ -2,18 +2,39 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>名前入力</title>
+    <title>チーム分け</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        textarea {
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
-    <h1>名前を入力してください</h1>
-    <input type="text" id="nameList" placeholder="名前を入力">
-    <button onclick="handleClick()">送信</button>
+    <h1>名前を入力し、チーム分け結果を表示します</h1>
 
-    <script>
-        function handleClick() {
-            const nameInput = document.getElementById("nameList");
-            alert("入力された名前: " + nameInput.value);
-        }
-    </script>
+    <div>
+        <label for="nameList">名前リスト（1行に1人）</label><br>
+        <textarea id="nameList" rows="30" placeholder="ここに名前を改行で入力してください"></textarea>
+    </div>
+
+    <br>
+    <button onclick="handleClick()">チーム分け実行</button>
+
+    <div class="container">
+        <div>
+            <label for="team1">Team 1</label><br>
+            <textarea id="team1" rows="30" readonly></textarea>
+        </div>
+        <div>
+            <label for="team2">Team 2</label><br>
+            <textarea id="team2" rows="30" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
