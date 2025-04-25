@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>狂想の息チーム分けアプリ</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    
+        textarea {
+            width: 400px; /* 200px × 2.0 */
+            font-size: 2.0em;
+        }
+    
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+    
+            textarea {
+                width: 100%;
+            }
+        }
+        #resultText {
+        width: 820px; /* 400px × 2.05くらいで見た目調整 */
+        font-size: 1.5em;
+}
+
+    </style>
+    
+</head>
+<body>
+    <h1>狂想の息チーム分けツール</h1>
+
+    <div class="container">
+        <div>
+            <label for="nameList">名前一覧（改行で区切って入力）</label><br>
+            <textarea id="nameList" rows="11"></textarea><br><br>
+        </div>
+        
+        <div>
+            <label for="jobList">役職一覧（改行で区切って入力）</label><br>
+            <textarea id="jobList" rows="11"></textarea><br><br>
+        </div>
+        
+    </div>
+    <button onclick="handleClick()">チーム分け実行</button>
+
+    <h2>結果</h2>
+
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <label for="resultText">共有用テキスト</label>
+        <button onclick="copyResult()">コピー</button>
+    </div>
+    <textarea id="resultText" rows="5" readonly></textarea>
+    <br><br>
+
+    <div class="container">
+        <div>
+            <label for="team1">西</label><br>
+            <textarea id="team1" rows="3" readonly></textarea>
+        </div>
+        <div>
+            <label for="team2">東</label><br>
+            <textarea id="team2" rows="3" readonly></textarea>
+        </div>
+        <div>
+            <label for="extra">観戦</label><br>
+            <textarea id="extra" rows="5" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
